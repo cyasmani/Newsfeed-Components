@@ -115,12 +115,13 @@ const data = [
 
     const main = document.querySelector(".articles");
     main.appendChild(divider);
+    divider.appendChild(spaner);
     divider.appendChild(heading);
     divider.appendChild(paragraph1);
     divider.appendChild(paragraph2);
     divider.appendChild(paragraph3);
     divider.appendChild(paragraph4);
-    divider.appendChild(spaner);
+   
 
     divider.classList.add("article");
     paragraph1.classList.add("date");
@@ -131,11 +132,10 @@ const data = [
     paragraph3.textContent = `${data.secondParagraph}`;
     paragraph4.textContent = `${data.thirdParagraph}`;
     spaner.textContent = "+";
-    spaner.addEventListener("toggle", function() {
-      document.querySelector(".article").classList.toggle(".article-open")
-    })
 
-    return 
+    spaner.addEventListener("click", event => {
+      divider.classList.toggle("article-open")
+    })
     
  };
 
